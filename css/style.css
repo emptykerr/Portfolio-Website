@@ -365,6 +365,8 @@ span {
 
 .about-content {
     text-align: center;
+    padding: 0 2rem;
+    
 }
 
 .about-content h3 {
@@ -376,7 +378,7 @@ span {
 .about-content p {
     position:relative;
     font-size: 1.6rem;
-    margin-bottom: 2rem 0 3rem;
+    margin-bottom: 2rem;
 }
 
 .btn-box.btns {
@@ -479,10 +481,7 @@ span {
     background: var(--second-bg-color);
 }
 
-.footer-text,
-.footer-iconTop{
-    position:relative;
-}
+
 
 .footer-text p {
     font-size: 1.6rem;
@@ -556,14 +555,13 @@ span {
     animation: none;
 }
 
-section:nth-child(odd) .animate.scroll,
-.footer .animate.scroll{
+section:nth-child(odd) .animate.scroll
+{
     background:var(--second-bg-color);
 }
 
 .about.show-animate .animate.scroll,
-.contact.show-animate .animate.scroll,
-.footer.show-animate .animate.scroll{
+.contact.show-animate .animate.scroll{
     transition-delay: calc(.3s * var(--i));
     width:0;
 }

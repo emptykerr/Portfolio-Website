@@ -79,6 +79,10 @@ window.onscroll = () => {
             document.querySelector('.contact').classList.add('show-animate');
             document.querySelector('.footer').classList.add('show-animate');
         }
+
+        if(checkVisible(sec)){
+            sec.classList.add('show-animate');
+        }
     })
     let header = document.querySelector('header');
     header.classList.toggle('sticky', window.scrollY > 100);
@@ -115,3 +119,8 @@ function animateText() {
 
 animateText(); // Initial animation
 
+function checkVisible(elm) {
+    var rect = elm.getBoundingClientRect();
+    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+  }
