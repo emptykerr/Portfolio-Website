@@ -167,7 +167,6 @@ section {
 
 .home.show-animate .home-content .text-animate h3 {
     animation: homeBgText 6s linear infinite;
-    animation-delay: 2s;
 }
 
 .home-content .text-animate h3::before {
@@ -183,7 +182,6 @@ section {
 
 .home.show-animate .home-content .text-animate h3::before {
     animation: homeCursorText 6s linear infinite;
-    animation-delay: 2s;
 }
 
 .home-content p {
@@ -766,6 +764,8 @@ section:nth-child(odd) .animate.scroll,
         background-position: 0 0;
     }
 }
+
+
 
 @keyframes homeCursorText {
 

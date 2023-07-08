@@ -92,18 +92,26 @@ window.onscroll = () => {
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
 
-const textPrompts = ["Software Developer", "Designer", "Creative Thinker", "Web Designer", "Teacher", "Programmer"]; // Array of text prompts
+const textPrompts = ['Software Developer', 'Industrial Designer', 'Teacher & Learner', 'Media Designer', 'Photographer', 'Creative Thinker', 'Programmer'];
+let currentPromptIndex = 0;
 
-const h3Element = document.querySelector('.text-animate h3');
+function animateText() {
+  const textElement = document.querySelector('.text-animate h3');
+  const currentPrompt = textPrompts[currentPromptIndex];
+  textElement.textContent = currentPrompt;
+  const textWidth = textElement.offsetWidth + 'px';
 
-function rotateText() {
-  // Get a random text prompt from the array
-  const randomIndex = Math.floor(Math.random() * textPrompts.length);
-  const newText = textPrompts[randomIndex];
-  
-  // Change the text content of the <h3> element
-  h3Element.textContent = newText;
+  textElement.style.width = textWidth;
+  textElement.style.animationDuration = 6 + 's';
+  textElement.classList.remove('show-animate');
+
+  void textElement.offsetWidth; // Trigger reflow to restart the animation
+  textElement.classList.add('show-animate');
+
+  currentPromptIndex = (currentPromptIndex + 1) % textPrompts.length;
+
+  setTimeout(animateText, 6100); // Delay before transitioning to the next prompt
 }
 
-// Add event listener to the animationend event of the text animation
-h3Element.addEventListener('animationend', rotateText);
+animateText(); // Initial animation
+
