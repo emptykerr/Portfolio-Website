@@ -44,6 +44,7 @@ body {
     --second-bg-color: #f5f5f5;
     --text-color: #081b29;
     --main-color: #0077cc;
+
 }
 
 .header {
@@ -127,11 +128,13 @@ section {
     background: url('../images/background.png') no-repeat;
     background-size: cover;
     background-position: center;
+    position:relative;
+    z-index:99;
 }
 
 .home-content {
     max-width: 68rem;
-    z-index: 100;
+    z-index: 99;
 }
 
 .home-content h1 {
@@ -140,7 +143,6 @@ section {
     font-size: 6.6rem;
     font-weight: 700;
     line-height: 1.3;
-    z-index: 101;
 }
 
 .home-content h1 span {
@@ -188,6 +190,16 @@ section {
     position: relative;
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
+}
+
+.home-imgHover{
+    position: absolute;
+    top:0;
+    right:0;
+    width:45%;
+    height:100%;
+    background: transparent;
+    z-index: 2;
 }
 
 
@@ -524,13 +536,12 @@ span {
     right:0;
     width: 100%;
     height: 100%;
-    background-color: yellow;
+    background-color: var(--bg-color);
     z-index: 98;
 }
 
 .animate.home-img {
-    width:40%;
-    
+    width:45%;   
 }
 
 .logo .animate,
@@ -548,7 +559,7 @@ span {
 }
 
 section:nth-child(odd) .animate.scroll,
-.footer.animate.scroll{
+.footer .animate.scroll{
     background:var(--second-bg-color);
 }
 
@@ -563,7 +574,13 @@ section:nth-child(odd) .animate.scroll,
     html {
         font-size: 55%;
     }
+
+    .home-content{
+        max-width: 60rem;
+    }
 }
+
+
 
 @media (max-width: 991px) {
     .header {
@@ -671,6 +688,12 @@ section:nth-child(odd) .animate.scroll,
     }
 
 
+}
+
+@media (max-width: 650px){
+    .home-content {
+        max-width: 50rem;
+    }
 }
 
 @media (max-width: 520px) {
