@@ -19,7 +19,7 @@ To access and explore my portfolio website, you can follow these steps:
 
 ***Clone the repository:***
 
-    git clone https://github.com/your-username/portfolio-website.git
+    git clone https://github.com/emptykerr/portfolio-website.git
 
 ***Navigate to the project directory:***
 
