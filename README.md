@@ -3,7 +3,7 @@
 
 This is my personal portfolio website that showcases my Java projects, design work, provides information about me, and serves as a platform to display my work. I built this website from scratch using HTML, JavaScript, and CSS as a way to enhance my skills and demonstrate my abilities.
 
-##Features
+## Features
 
 * Portfolio: The portfolio section showcases a selection of my Java projects. Each project is accompanied by a brief description, screenshots, and relevant details to provide an overview of the work I have done.
 
@@ -13,7 +13,7 @@ This is my personal portfolio website that showcases my Java projects, design wo
 
 * Contact: The Contact section provides a means to get in touch with me. You can email me and find links to my social media profiles. I am open to collaboration, so feel free to reach out if you have any questions or would like to discuss a potential project.
 
-##Usage
+## Usage
 
 To access and explore my portfolio website, you can follow these steps:
 
@@ -29,7 +29,7 @@ To access and explore my portfolio website, you can follow these steps:
 
     Browse through the different sections to explore my portfolio, learn more about me, and view my skills.
 
-##Contributing
+## Contributing
 
 Thank you for your interest in contributing to my portfolio website. While I currently do not accept direct contributions to this project, I appreciate any feedback or suggestions you may have. Feel free to open an issue on the GitHub repository if you encounter any bugs, have ideas for improvement, or would like to provide general feedback.
 License
