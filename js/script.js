@@ -96,21 +96,60 @@ window.onscroll = () => {
     footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
 
-const textPrompts = ['Software Developer', 'Industrial Designer', 'Teacher & Learner', 'Media Designer', 'Photographer', 'Creative Thinker', 'Programmer'];
+const textPrompts = ['Software Developer', 'Industrial Designer.', 'Teacher & Learner...', 'Media Designer . . . .', 'Photographer . . . . . .', 'Creative Thinker . . .', 'Programmer . . . . . . .'];
 let currentPromptIndex = 0;
 
 function animateText() {
   const textElement = document.querySelector('.text-animate h3');
   const currentPrompt = textPrompts[currentPromptIndex];
   textElement.textContent = currentPrompt;
-  const textWidth = textElement.offsetWidth + 'px';
 
-  textElement.style.width = textWidth;
+  const element = document.querySelector('.text-animate');
+  // const textWidth = window.getComputedStyle(element).getPropertyValue('width');
+  // element.style.maxWidth = textWidth;
+
+
+  // let textWidth;
+  // switch (currentPromptIndex) {
+  //   case 0:
+  //     textWidth = 288 + 'px';
+  //     break;
+  //   case 1:
+  //     textWidth = 278 + 'px';
+  //     break;
+  //   case 2:
+  //     textWidth = 270 + 'px';
+  //     break;
+  //   case 3:
+  //     textWidth = 230+ 'px';
+  //     break;
+  //   case 4:
+  //     textWidth = 210+ 'px';
+  //     break;
+  //   case 5:
+  //     textWidth = 245+ 'px';
+  //     break;
+  //   case 6:
+  //     textWidth = 195+ 'px';
+  //     break;
+  //   default:
+  //     textWidth = 0;
+  //     break;
+  // }
+  //  element.style.width = textWidth;
+// console.log("textWidth" + textWidth);
+// console.log(window.getComputedStyle(textElement).getPropertyValue('width'));
+
+  
+
+  
   textElement.style.animationDuration = 6 + 's';
-  textElement.classList.remove('show-animate');
+  element.style.animationDuration = 6 + 's';
 
-  void textElement.offsetWidth; // Trigger reflow to restart the animation
-  textElement.classList.add('show-animate');
+  element.classList.remove('show-animate');
+
+  void element.offsetWidth; // Trigger reflow to restart the animation
+  element.classList.add('show-animate');
 
   currentPromptIndex = (currentPromptIndex + 1) % textPrompts.length;
 
@@ -152,8 +191,8 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+    dots[i].className = dots[i].className.replace(" active-dot", "");
   }
   slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  dots[slideIndex-1].className += " active-dot";
 } 
