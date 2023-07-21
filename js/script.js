@@ -165,8 +165,6 @@ function checkVisible(elm) {
   }
 
 
-
-  //Slideshow for programmer section
   let slideIndex = 1;
   let slideInterval;
   
@@ -175,12 +173,15 @@ function checkVisible(elm) {
   
   // Function to start the slideshow interval
   function startSlideInterval() {
-    slideInterval = setInterval(() => plusSlides(1), 4000);
+    if (!slideInterval) {
+      slideInterval = setInterval(() => plusSlides(1), 4000);
+    }
   }
   
   // Function to pause the slideshow interval
   function pauseSlideInterval() {
     clearInterval(slideInterval);
+    slideInterval = null;
     setTimeout(() => {
       startSlideInterval();
     }, 15000);
