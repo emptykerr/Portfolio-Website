@@ -1,4 +1,4 @@
- //toggle icon navbar
+//toggle icon navbar
 
 
 
@@ -14,35 +14,35 @@ const currentBackground = home.style.background;
 const theme = localStorage.getItem('theme');
 
 //onmount
-  theme && document.body.classList.add('theme');
+theme && document.body.classList.add('theme');
 
 //handlers
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+  menuIcon.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
 }
 
 darkMode.onclick = () => {
-    document.body.classList.toggle('dark-mode');
-    localStorage.setItem('theme', document.body.classList.contains('dark-mode'));
-    if (document.body.classList.contains('dark-mode')) {
-        home.style.backgroundImage = "url('../images/background-light.png')";
-    } else {
-        home.style.backgroundImage = "url('../images/background.png')";
-    }
+  document.body.classList.toggle('dark-mode');
+  localStorage.setItem('theme', document.body.classList.contains('dark-mode'));
+  if (document.body.classList.contains('dark-mode')) {
+    home.style.backgroundImage = "url('../images/background-light.png')";
+  } else {
+    home.style.backgroundImage = "url('../images/background.png')";
+  }
 }
 
 
 switchContainer.onclick = () => {
-    switchContainer.classList.toggle('active');
-    switchIcon.classList.toggle('bx-toggle-left');
-    switchIcon.classList.toggle('bxs-toggle-right');
- 
+  switchContainer.classList.toggle('active');
+  switchIcon.classList.toggle('bx-toggle-left');
+  switchIcon.classList.toggle('bxs-toggle-right');
+
 }
 
 menuIcon.onclick = () => {
-    menuIcon.classList.toggle('bx-x');
-    navbar.classList.toggle('active');
+  menuIcon.classList.toggle('bx-x');
+  navbar.classList.toggle('active');
 }
 
 
@@ -52,48 +52,48 @@ let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav a');
 
 window.onscroll = () => {
-    // sticky header
-    sections.forEach(sec=>{
-        let top = window.scrollY;
-        let offset = sec.offsetTop - 100;
-        let height = sec.offsetHeight;
-        let id = sec.getAttribute('id');
+  // sticky header
+  sections.forEach(sec => {
+    let top = window.scrollY;
+    let offset = sec.offsetTop - 100;
+    let height = sec.offsetHeight;
+    let id = sec.getAttribute('id');
 
-        if(top >= offset && top < offset + height){
-           //active navbar links
-              navLinks.forEach(links=>{
-                    links.classList.remove('active');
-                    document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
-                });
-                // active sections for animation on scroll
-                sec.classList.add('show-animate');
-        }
-        // to use animation that repeats on scroll
-        else{
-            sec.classList.remove('show-animate');
-        }
+    if (top >= offset && top < offset + height) {
+      //active navbar links
+      navLinks.forEach(links => {
+        links.classList.remove('active');
+        document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+      });
+      // active sections for animation on scroll
+      sec.classList.add('show-animate');
+    }
+    // to use animation that repeats on scroll
+    else {
+      sec.classList.remove('show-animate');
+    }
 
-          // Check if user has reached the bottom of the page
-          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-            // Add show-animate class to the contact section
-            document.querySelector('.contact').classList.add('show-animate');
-            document.querySelector('.footer').classList.add('show-animate');
-        }
+    // Check if user has reached the bottom of the page
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      // Add show-animate class to the contact section
+      document.querySelector('.contact').classList.add('show-animate');
+      document.querySelector('.footer').classList.add('show-animate');
+    }
 
-        if(checkVisible(sec)){
-            sec.classList.add('show-animate');
-        }
-    })
-    let header = document.querySelector('header');
-    header.classList.toggle('sticky', window.scrollY > 100);
+    if (checkVisible(sec)) {
+      sec.classList.add('show-animate');
+    }
+  })
+  let header = document.querySelector('header');
+  header.classList.toggle('sticky', window.scrollY > 100);
 
-    // remove toggle icon and navbar when click navbar links
-    menuIcon.classList.remove('bx-x');
-    navbar.classList.remove('active');
+  // remove toggle icon and navbar when click navbar links
+  menuIcon.classList.remove('bx-x');
+  navbar.classList.remove('active');
 
-    //animate footer on scroll
-    let footer = document.querySelector('footer');
-    footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
+  //animate footer on scroll
+  let footer = document.querySelector('footer');
+  footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
 }
 
 const textPrompts = ['Software Developer', 'Industrial Designer.', 'Teacher & Learner...', 'Media Designer . . . .', 'Photographer . . . . . .', 'Creative Thinker . . .', 'Programmer . . . . . . .'];
@@ -137,12 +137,12 @@ function animateText() {
   //     break;
   // }
   //  element.style.width = textWidth;
-// console.log("textWidth" + textWidth);
-// console.log(window.getComputedStyle(textElement).getPropertyValue('width'));
+  // console.log("textWidth" + textWidth);
+  // console.log(window.getComputedStyle(textElement).getPropertyValue('width'));
 
-  
 
-  
+
+
   textElement.style.animationDuration = 6 + 's';
   element.style.animationDuration = 6 + 's';
 
@@ -159,70 +159,112 @@ function animateText() {
 animateText(); // Initial animation
 
 function checkVisible(elm) {
-    var rect = elm.getBoundingClientRect();
-    var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
-    return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
-  }
+  var rect = elm.getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  return !(rect.bottom < 0 || rect.top - viewHeight >= 0);
+}
 
 
-  let slideIndex = 1;
-  let slideInterval;
-  
-  showSlides(slideIndex);
-  startSlideInterval();
-  
-  // Function to start the slideshow interval
-  function startSlideInterval() {
-    if (!slideInterval) {
-      slideInterval = setInterval(() => plusSlides(1), 4000);
-    }
+let slideIndex = 1;
+let slideInterval;
+
+showSlides(slideIndex);
+startSlideInterval();
+
+// Function to start the slideshow interval
+function startSlideInterval() {
+  if (!slideInterval) {
+    slideInterval = setInterval(() => plusSlides(1), 4000);
   }
-  
-  // Function to pause the slideshow interval
-  function pauseSlideInterval() {
-    clearInterval(slideInterval);
-    slideInterval = null;
-    setTimeout(() => {
-      startSlideInterval();
-    }, 15000);
-  }
-  
-  // Next/previous controls
-  function plusSlides(n) {
-    showSlides((slideIndex += n));
-  }
-  
-  // Thumbnail image controls
-  function currentSlide(n) {
-    showSlides((slideIndex = n));
-  }
-  
-  function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {
-      slideIndex = 1;
-    }
-    if (n < 1) {
-      slideIndex = slides.length;
-    }
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active-dot", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active-dot";
-  }
-  
-  // Add click event listeners to dots
+}
+
+// Function to pause the slideshow interval
+function pauseSlideInterval() {
+  clearInterval(slideInterval);
+  slideInterval = null;
+  setTimeout(() => {
+    startSlideInterval();
+  }, 15000);
+}
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", () => {
-      currentSlide(i + 1);
-      pauseSlideInterval();
-    });
+  if (n > slides.length) {
+    slideIndex = 1;
   }
-  
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+  }
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active-dot";
+}
+
+// Add click event listeners to dots
+let dots = document.getElementsByClassName("dot");
+for (let i = 0; i < dots.length; i++) {
+  dots[i].addEventListener("click", () => {
+    currentSlide(i + 1);
+    pauseSlideInterval();
+  });
+}
+
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+
+const cursor = document.querySelector(".cursor");
+
+// const colours = ["#0077cc", "#0077cc", "#0074c7", "#0074c7", "#0074c7", "#006db9", "#006db9", "#0063a5", "#0063a5", "#00568c", "#00568c", "#004771", "#004771", "#003856", "#003856", "#062a3e", "#062a3e", "#0a1d29", "#0a1d29", "#08131a", "#08131a", "#08131a", "#03090e", "#03090e", "#010508", "#010508"];
+const colours = ["#00abf0"];
+circles.forEach((circle, index) => {
+  circle.x = 0;
+  circle.y = 0;
+  circle.style.backgroundColor = colours[index % colours.length];
+});
+
+window.addEventListener("mousemove", function (e) {
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+});
+
+function animateCircles() {
+  let x = coords.x;
+  let y = coords.y;
+
+  cursor.style.top = x;
+  cursor.style.left = y;
+
+  circles.forEach(function (circle, index) {
+    circle.style.left = x - 12 + "px";
+    circle.style.top = y - 12 + "px";
+
+    circle.style.scale = (circles.length - index) / circles.length;
+
+    circle.x = x;
+    circle.y = y;
+
+    const nextCircle = circles[index + 1] || circles[0];
+    x += (nextCircle.x - x) * 0.3;
+    y += (nextCircle.y - y) * 0.3;
+  });
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();

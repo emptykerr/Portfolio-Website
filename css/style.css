@@ -47,6 +47,24 @@ body {
 
 }
 
+.cursor {
+    pointer-events: none;
+    position: fixed;
+    display: block;
+    border-radius: 0;
+    mix-blend-mode: difference;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+.circle{
+    height: 24px;
+    width: 24px;
+    border-radius: 24px;
+    background-color: var(--main-light);
+    position: absolute;
+}
+
 .header {
     position: fixed;
     top: 0;
