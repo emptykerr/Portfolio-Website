@@ -1,0 +1,52 @@
+body {
+    background-color: powderblue;
+  }
+ 
+/* Homepage Half Face */
+.face {
+    width: 100%;
+    position: relative;
+    /* Show default image */
+    /* Descriptions */
+    /* Inline media queries */
+    /* Full sliding half face experience */
+  }
+  .face .face-img {
+    display: block;
+    margin: 0px;
+  }
+  .face a {
+    color: #757575;
+    text-decoration: none;
+  }
+  .face .coder,
+  .face .designer {
+    position: absolute;
+    width: 40%;
+    display: block;
+    z-index: 10;
+    height: 20%;
+    /* vertical centering */
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+  .face .coder h1,
+  .face .designer h1 {
+    display: none;
+  }
+  .face .designer {
+    left: 0;
+  }
+  .face .coder {
+    right: 0;
+    text-align: right;
+  }
+  .face .designer-img,
+  .face .coder-img,
+  .face .designer-bg,
+  .face .coder-bg,
+  .face .coder p,
+  .face .designer p {
+    display: none;
+  }
